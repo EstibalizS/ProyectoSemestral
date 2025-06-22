@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-bottom:  2em ;
+    background-image: url('../imagenes/fondo\ de\ pantalla\ para\ formularios.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    position: relative;
+}
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    background: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+.container h1 {
+    color: #393939; 
+    text-align: center;
+}
+
+.card {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Limita el ancho de la tarjeta */
+    background: #E6E2D6 !important;
+    overflow: hidden;
+}
+
+.table {
+    word-wrap: break-word; /* Permite que el texto largo se ajuste dentro de las celdas */
+    table-layout: fixed;   /* Ajusta el ancho de las columnas */
+    font-size: 12px;
+}
+
+.table th, .table td {
+    text-align: center;    /* Centra el contenido en las celdas */
+    vertical-align: middle;
+}
+
+.table img {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 5px;
+}
+
+.result {
+    overflow-x: auto; /* Habilita el scroll horizontal si la tabla es muy ancha */
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h1, h5 {
+    text-align: center;
+}
+
+.alert {
+    margin-top: 10px;
+}
+
+/* Eliminar el transform para evitar el salto cuando se pasa el cursor */
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+    border-radius: 5px;
+    color: #0f5132;
+    display: none;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background: #E6E2D6 !important; /* Asegura que el fondo sea el deseado */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+form .form-control {
+    background-color: #fdfdfd; /* Fondo gris claro en los campos de entrada */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form .form-control:focus {
+    border-color: #035E8D;
+    box-shadow: 0 0 5px rgba(3, 94, 141, 0.5);
+}
+
+form button.btn {
+    background-color: #fbc68d !important; /* Elimina el azul y fuerza el color que quiero */
+    color: white;
+    padding: 10px; 
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; 
+    width: 120px; 
+}
+
+form button.btn:hover {
+    background-color: #fea240  !important; /* Un tono más oscuro para el hover */
+}
+
+/* Header */
+.header {
+    position: absolute; /* Se posicionará respecto al contenedor */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 60px; /* Altura del footer */
+    background-color: #035E8D; /* Color del footer */
+    display: flex; /* Activar flexbox */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-icons {
+    display: flex; /* Si tienes más íconos, también los alinea */
+    justify-content: center;
+    align-items: center;
+}
+
+.header-icons i {
+    font-size: 25px; /* Tamaño del ícono */
+    color: #fff; /* Color del ícono */
+    margin-right: 30px;
+}
+
+.footer {
+    position: absolute; /* Se posicionará respecto al contenedor */
+    left: 0;
+    bottom: 0;
+    padding: 1em 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 60px; /* Altura del footer */
+    background-color: #035E8D; /* Color del footer */
+    display: flex; /* Activar flexbox */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    header .header-icons {
+        margin-top: 10px;
+    }
+}

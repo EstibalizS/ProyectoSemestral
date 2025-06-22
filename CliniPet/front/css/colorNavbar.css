@@ -1,0 +1,58 @@
+.navbar-custom {
+  background-color: #035E8D; 
+  border-bottom: 2px solid #035E8D;
+}
+
+
+.navbar-custom .navbar-toggler-icon {
+  background-color: #035E8D; 
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: #ffffff; 
+}
+
+/* Estilo del menú colapsable */
+.navbar-menu {
+  background-color: #035E8D; /* Fondo del menú */
+  color: white;
+  width: 250px; /* Ancho del menú desplegable */
+  position: absolute; /* Posición absoluta para que aparezca al costado */
+  top: 56px; /* Alinear debajo del navbar */
+  left: 0;
+  z-index: 1050;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo del texto y enlaces en el menú */
+.navbar-menu h4 {
+  margin-bottom: 1rem;
+}
+
+.navbar-menu ul {
+  padding-left: 0;
+}
+
+.navbar-menu ul li {
+  margin-bottom: 10px;
+}
+
+.navbar-menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+
+/* Transiciones para abrir/cerrar */
+.collapse:not(.show) .navbar-menu {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.collapse.show .navbar-menu {
+  transform: translateX(0);
+  opacity: 1;
+}
