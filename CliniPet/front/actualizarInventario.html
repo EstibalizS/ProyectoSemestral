@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Inventario</title>
+    <link rel="stylesheet" href="CSS/estilosregistrarInventario.css">
+    <link rel="stylesheet" href="CSS/colorNavbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+
+   <!-- Navbar -->
+   <nav class="navbar navbar-dark navbar-custom px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <!-- Botón del navbar y el nombre -->
+      <div class="d-flex align-items-center">
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="mb-0 text-white">Clini<span style="color: #ffa500;">Pet</span></h1>
+      </div>
+
+      <!-- Iconos - atrás y página principal -->
+      <div class="header-icons i">
+        <div class="d-flex align-items-center">
+          <a href="javascript:void(0);" onclick="window.history.back();">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a href="PaginaPrincipal.html">
+            <i class="fas fa-home"></i>
+          </a>
+        </div>
+        </div>
+      </div>
+  </nav>
+
+   <!-- Por ahora lo dejé así, pero agreguen o cambien los nombres que deben salir en el navbar -->
+   <div class="collapse" id="navbarToggleExternalContent">
+    <div class="navbar-menu p-4">
+      <h4 class="text-white">Menú</h4>
+      <ul class="list-unstyled">
+        <li><a href="RegistrarInventario.html" class="text-white">Registrar Inventario</a></li>
+        <li><a href="RegistroCliente.html" class="text-white">Registrar Cliente</a></li>
+        <li><a href="RegistroMascotas.html" class="text-white">Registrar Mascota</a></li>
+        <li><a href="actualizarCliente.html" class="text-white">Actualizar Cliente</a></li>
+        <li><a href="actualizarMascota.html" class="text-white">Actualizar Mascota</a></li>
+        <li><a href="ConsultarMascotaCliente.html" class="text-white">Consultar Mascota y Cliente</a></li>
+      </ul>
+    </div>
+  </div>
+        
+  <div class="container">
+    <div class="card">
+        <h1>Agregar Inventario</h1>
+        <form id="formActualizarInventario">
+            <!-- Selección del producto -->
+            <div class="mb-3">
+                <label for="selectItem" class="form-label">Seleccione un producto</label>
+                <select id="selectItem" class="form-control" required>
+                    <option value="" disabled selected>Seleccione un producto</option>
+                </select>
+            </div>
+
+            <!-- ID del item (autollenado) -->
+            <div class="mb-3">
+                <label for="idItem" class="form-label">ID del Item</label>
+                <input type="text" class="form-control" id="idItem" readonly>
+            </div>
+
+            <!-- Cantidad -->
+            <div class="mb-3">
+                <label for="cantidadAgregada" class="form-label">Cantidad Agregada</label>
+                <input type="number" class="form-control" id="cantidadAgregada" placeholder="Ingrese la cantidad a agregar" required min="1">
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+        </form>
+
+        <div id="resultContainer" class="result" style="display: none;">
+            <h5>Resultados:</h5>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/actualizarInventario.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+      © 2024 CliniPet. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
