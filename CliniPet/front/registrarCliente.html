@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Cliente</title>
+    <link rel="icon" type="image/png" href="imagenes/logo.png">
+    <link rel="stylesheet" href="CSS/estilosRegistrarCliente.css">
+    <link rel="stylesheet" href="CSS/colorNavbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark navbar-custom px-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Botón del navbar y el nombre -->
+            <div class="d-flex align-items-center">
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h1 class="mb-0 text-white">Clini<span style="color: #ffa500;">Pet</span></h1>
+            </div>
+            <!-- Iconos - atrás y página principal -->
+            <div class="header-icons i">
+                <div class="d-flex align-items-center">
+                    <a href="javascript:void(0);" onclick="window.history.back();">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <a href="PaginaPrincipal.html">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+ <!-- Por ahora lo dejé así, pero agreguen o cambien los nombres que deben salir en el navbar -->
+ <div class="collapse" id="navbarToggleExternalContent">
+    <div class="navbar-menu p-4">
+      <h4 class="text-white">Menú</h4>
+      <ul class="list-unstyled">
+        <li><a href="RegistrarInventario.html" class="text-white">Registrar Inventario</a></li>
+        <li><a href="RegistroCliente.html" class="text-white">Registrar Cliente</a></li>
+        <li><a href="RegistroMascotas.html" class="text-white">Registrar Mascota</a></li>
+        <li><a href="actualizarCliente.html" class="text-white">Actualizar Cliente</a></li>
+        <li><a href="actualizarMascota.html" class="text-white">Actualizar Mascota</a></li>
+        <li><a href="ConsultarMascotaCliente.html" class="text-white">Consultar Mascota y Cliente</a></li>
+        <li><a href="informacion.html" class="text-white">Información</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Registrar Cliente</h1>
+        <form id="clienteForm">
+            <div class="mb-3">
+                <label for="cedula" class="form-label">Cédula:</label>
+                <input type="text" class="form-control" id="cedula" name="cedula"
+                    placeholder="Ej: 8-123-4567, 10-1234-5678 o E-123456"
+                    pattern="(^[1-9]-\d{3}-\d{4}$)|(^10-\d{4}-\d{4}$)|(^E-\d{6,}$)|(^[A-Z][0-9].*)"
+                    title="Formato válido: 8-123-4567, 10-1234-5678, E-123456 o pasaporte (ej. P123456)"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" id="telefono" name="telefono"
+                placeholder="Ej: 6123-4567"
+                pattern="^\d{4}-\d{4}$"
+                title="El formato debe ser 1234-5678"
+                required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección:</label>
+                <textarea class="form-control" id="direccion" name="direccion" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="cantidadDeMascotas" class="form-label">Cantidad de Mascotas:</label>
+                <input type="number" class="form-control" id="cantidadDeMascotas" name="cantidadDeMascotas" min="1" max="2" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Registrar Cliente</button>
+        </form>
+        <div id="responseMessage" class="alert mt-3"></div>
+    </div>
+
+
+    
+    <!-- Footer -->
+    <footer class="footer text-center py-3">
+        © 2024 CliniPet. Todos los derechos reservados.
+    </footer>
+    <!-- Scripts -->
+    <script src="js/registrarCliente.js"></script>
+</body>
+</html>
