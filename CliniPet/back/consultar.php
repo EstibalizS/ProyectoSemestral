@@ -26,7 +26,6 @@ if ($stmt === false) {
     exit;
 }
 
-
 $results = [];
 
 while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
@@ -45,7 +44,7 @@ while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
         "genero" => $row["Genero"],
         "fechaRegistro" => $row["FechaRegistro"] ? $row["FechaRegistro"]->format('Y-m-d') : null,
         "razaMascota" => $row["RazaMascota"],
-        "foto" => $row["Foto"]
+        "foto" => $row["Foto"] ? "data:image/jpeg;base64," . base64_encode($row["Foto"]) : null
     ];
 }
 

@@ -26,9 +26,17 @@ function consultar() {
     if (idMascota) queryParams.append("idMascota", idMascota);
 
     fetch(`../back/consultar.php?${queryParams.toString()}`)
-        .then((response) => {
+        .then(async (response) => {
             if (!response.ok) throw new Error("Error en la consulta.");
-            return response.json();
+
+            const text = await response.text();
+            console.log("Respuesta cruda del servidor:", text);
+
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                throw new Error("Respuesta no es JSON válido");
+            }
         })
         .then((data) => {
             if (data.error) {
@@ -68,7 +76,7 @@ function consultar() {
             resultContainer.style.display = "block";
         })
         .catch((error) => {
-            console.error(error);
+            console.error("Error en la consulta:", error);
             messageDiv.textContent = "Ocurrió un error al procesar la solicitud.";
             messageDiv.style.display = "block";
         });
